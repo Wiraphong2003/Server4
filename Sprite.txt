@@ -1,0 +1,49 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.geom.Rectangle2D;
+
+public class PlayerSprites {
+    public double x,y,size;
+    private Color color;
+    private JPanel jPanel;
+    Image imgFrame;
+    public PlayerSprites(double a, double b, double s, Color c){
+        x = a;
+        y = b;
+        size = s;
+        color = c;
+    }
+
+    public void drawSperite(Graphics2D g2d){
+        Rectangle2D.Double sqare = new Rectangle2D.Double(x,y,size,size);
+        g2d.setColor(color);
+        g2d.fill(sqare);
+    }
+//    public void drawSperite(Graphics2D g2d){
+//        Image img1 =  Toolkit.getDefaultToolkit().createImage(System.getProperty("user.dir") + File.separator + "ch2_default");
+//        Rectangle2D.Double sqare = new Rectangle2D.Double(x,y,size,size);
+//        g2d.drawImage(img1,100,400, (ImageObserver) this);
+//        g2d.setColor(color);
+//        g2d.fill(sqare);
+//    }
+
+    public void moveH(double n){
+        x +=n;
+    }
+    public  void moveV(double n){
+        y+=n;
+    }
+    public  void setX(double n){
+        x = n;
+    }
+    public void  setY(double n){
+        y=n;
+    }
+
+    public double getX(){
+        return x;
+    }
+    public double getY(){
+        return y;
+    }
+}
